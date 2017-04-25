@@ -24,6 +24,11 @@ class UsersController < ApplicationController
 
   def update
     set_user
+    if @user.update!(user_params)
+      redirect_to user_path(@user)
+    else
+      render :'users/edit'
+    end
   end
 
   def destroy
