@@ -1,6 +1,6 @@
 <h2>Login</h2>
 
-<%= form_for @login, sessions_path do |f| %>
+<%= form_for @login, :url => sessions_path do |f| %>
 <div class='form-field'>
   <%= f.label "username" %>
   <%= f.text_field :username %>
