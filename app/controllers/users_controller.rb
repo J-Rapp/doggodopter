@@ -15,19 +15,26 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    set_user
   end
 
   def edit
+    set_user
   end
 
   def update
+    set_user
   end
 
   def destroy
+    set_user
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:username, :password, :password_confirmation)

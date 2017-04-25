@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, except: :index
+  root to: 'welcome#index'
+  resources :users, except: [:index]
+  resources :sessions, only: [:new, :create, :destroy]
 end
