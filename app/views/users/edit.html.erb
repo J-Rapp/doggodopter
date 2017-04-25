@@ -1,3 +1,22 @@
 <h3>Edit user's settings for searching</h3>
-<%= link_to 'Change Password', edit_user_path(@user) %>
-<%= link_to 'Delete Account', user_path(@user), method: :destroy %>
+
+<%= form_for @user do |f| %>
+
+<div class='form-field'>
+  <%= f.label "password" %>
+  <%= f.password_field :password %>
+  <p class='errors'><%= show_errors(@user, :password) %></p>
+</div>
+
+<div class='form-field'>
+  <%= f.label "confirm password" %>
+  <%= f.password_field :password_confirmation %>
+  <p class='errors'><%= show_errors(@user, :password_confirmation) %></p>
+</div>
+
+  <%= f.submit %>
+<% end %>
+
+<%= form_for @user, method: :delete do |f| %>
+  <%= f.submit 'Delete Account' %>
+<% end %>

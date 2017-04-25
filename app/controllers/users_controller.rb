@@ -28,6 +28,8 @@ class UsersController < ApplicationController
 
   def destroy
     set_user
+    @user.destroy!
+    redirect_to root_path
   end
 
   private
