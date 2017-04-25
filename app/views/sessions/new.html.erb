@@ -1,0 +1,19 @@
+<h2>Login</h2>
+
+<%= form_for @login, :url => sessions_path do |f| %>
+<div class='form-field'>
+  <%= f.label "username" %>
+  <%= f.text_field :username %>
+  <p class='errors'><%= show_errors(@login, :username) %></p>
+</div>
+
+<div class='form-field'>
+  <%= f.label "password" %>
+  <%= f.password_field :password %>
+  <p class='errors'><%= show_errors(@login, :password) %></p>
+</div>
+
+  <p class='errors'><%= show_errors(@login, :login) %></p>
+
+  <%= f.submit 'Login' %>
+<% end %>
