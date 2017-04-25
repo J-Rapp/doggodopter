@@ -1,0 +1,33 @@
+body {
+  background-color: $silver-white;
+  margin-top: 1em;
+}
+
+h1 {
+  font-size: 5em;
+  font-family: 'Pacifico', cursive;
+  color: $red;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.blue-box {
+  background: $blue;
+  max-width: 80%;
+  border-radius: 10px;
+}
+
+.btn {
+  font-size: 1.5em;
+  display: block;
+  max-width: 60%;
+  margin: 1.5em auto;
+}
+
+.btn-primary {
+  background-color: $red;
+}
+
+.btn-primary:hover {
+  background-color: $dull-red;
+}
