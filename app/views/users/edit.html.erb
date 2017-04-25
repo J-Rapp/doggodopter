@@ -1,26 +1,26 @@
 <%= form_for @user do |f| %>
 
   <div class='input-group'>
-    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-    <%= f.check_box :cats, { class: 'form-control' } %>
+    <span class="input-group-addon">Do you own any cats?</span>
+    <span class="input-group-addon"><%= f.check_box :cats, class: 'form-control' %></span>
   </div>
 
   <p class='errors'><%= show_errors(@user, :cats) %></p>
 
   <div class='input-group'>
-    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-    <%= f.check_box :children, { class: 'form-control' } %>
+    <span class="input-group-addon">Do you have any children?</span>
+    <span class="input-group-addon"><%= f.check_box :children, class: 'form-control' %></span>
   </div>
 
   <p class='errors'><%= show_errors(@user, :children) %></p>
 
   <div class='input-group'>
-    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-    <%= f.range_field :energy, in: (1..10), class: 'form-control' %>
+    <span class="input-group-addon">Doggo energy preference:</span>
+    <span class="input-group-addon"><%= f.range_field :energy, in: (1..5), class: 'form-control' %></span>
   </div>
 
   <p class='errors'><%= show_errors(@user, :energy) %></p>
 
-  <%= f.submit 'Confirm Settings' %>
+  <%= f.submit 'Confirm Settings', class: 'btn btn-default' %>
 <% end %>
 
