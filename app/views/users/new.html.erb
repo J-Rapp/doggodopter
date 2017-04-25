@@ -1,27 +1,25 @@
-<h2>New user</h2>
+<h2>Sign Up</h2>
 
 <%= form_for @user do |f| %>
-<div class='form-field'>
-  <%= f.label "username" %>
-  <%= f.text_field :username %>
-  <p class='errors'><%= show_errors(@user, :username) %></p>
-</div>
 
-<div class='form-field'>
-  <%= f.label "password" %>
-  <%= f.password_field :password %>
-  <p class='errors'><%= show_errors(@user, :password) %></p>
-</div>
+  <div class='input-group'>
+    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+    <%= f.text_field :username, { class: 'form-control', placeholder: 'Username' } %>
+    <p class='errors'><%= show_errors(@user, :username) %></p>
+  </div>
 
-<div class='form-field'>
-  <%= f.label "confirm password" %>
-  <%= f.password_field :password_confirmation %>
-  <p class='errors'><%= show_errors(@user, :password_confirmation) %></p>
-</div>
+  <div class='input-group'>
+    <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+    <%= f.password_field :password, { class: 'form-control', placeholder: 'Password' } %>
+    <p class='errors'><%= show_errors(@user, :password) %></p>
+  </div>
 
-<div class='form-field'>
-  <h3>TODO: more form fields for user search settings</h3>
-</div>
+  <div class='input-group'>
+    <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+    <%= f.password_field :password_confirmation, { class: 'form-control', placeholder: 'Confirm Password' } %>
+    <p class='errors'><%= show_errors(@user, :password_confirmation) %></p>
+  </div>
 
-  <%= f.submit %>
+  <%= f.submit class: 'btn btn-default' %>
+
 <% end %>
