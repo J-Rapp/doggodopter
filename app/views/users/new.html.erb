@@ -1,0 +1,23 @@
+<h2>New user</h2>
+<hr>
+<%= form_for @user do |f| %>
+<div class='form-field'>
+  <%= f.label "username" %>
+  <%= f.text_field :username %>
+  <p class='errors'><%= show_errors(@user, :username) %></p>
+</div>
+
+<div class='form-field'>
+  <%= f.label "password" %>
+  <%= f.password_field :password %>
+  <p class='errors'><%= show_errors(@user, :password) %></p>
+</div>
+
+<div class='form-field'>
+  <%= f.label "confirm password" %>
+  <%= f.password_field :password_confirmation %>
+  <p class='errors'><%= show_errors(@user, :password_confirmation) %></p>
+</div>
+
+  <%= f.submit %>
+<% end %>
