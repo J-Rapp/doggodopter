@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.valid?
       session[:user_id] = @user.id
       # TODO: jump straight into dog options
-      redirect_to user_path(@user)
+      redirect_to edit_user_path(@user)
     else
       render :'users/new'
     end
@@ -24,7 +24,8 @@ class UsersController < ApplicationController
 
   def update
     set_user
-    if @user.update(user_params)
+    update_user_attributes
+    if @user.save validate: false
       redirect_to user_path(@user)
     else
       render :'users/edit'
@@ -44,6 +45,12 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :cats, :children, :energy)
+  end
+
+  def update_user_attributes
+    @user.cats = user_params[:cats]
+    @user.children = user_params[:children]
+    @user.energy = user_params[:energy]
   end
 end
