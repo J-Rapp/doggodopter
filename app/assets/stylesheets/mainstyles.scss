@@ -16,6 +16,10 @@ h2 {
   margin: 1em 0;
 }
 
+.container {
+  width: 100%;
+}
+
 .blue-box {
   background: $blue;
   max-width: 80%;
@@ -27,7 +31,7 @@ h2 {
   font-size: 1.5em;
   display: block;
   max-width: 60%;
-  margin: 0 auto;
+  margin: .5em auto;
 }
 
 .btn-primary {
@@ -39,6 +43,6 @@ h2 {
 }
 
 .input-group {
-  margin: .75em .25em;
+  margin: .75em;
   border-radius: 5px;
 }
