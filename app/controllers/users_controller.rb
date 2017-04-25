@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.valid?
       session[:user_id] = @user.id
       # TODO: jump straight into dog options
-      redirect_to user_path(@user)
+      redirect_to edit_user_path(@user)
     else
       render :'users/new'
     end

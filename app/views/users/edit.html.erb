@@ -1,22 +1,26 @@
-<h3>Edit user's settings for searching</h3>
-
 <%= form_for @user do |f| %>
 
-<div class='form-field'>
-  <%= f.label "password" %>
-  <%= f.password_field :password %>
-  <p class='errors'><%= show_errors(@user, :password) %></p>
-</div>
+  <div class='input-group'>
+    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+    <%= f.check_box :cats, { class: 'form-control' } %>
+  </div>
 
-<div class='form-field'>
-  <%= f.label "confirm password" %>
-  <%= f.password_field :password_confirmation %>
-  <p class='errors'><%= show_errors(@user, :password_confirmation) %></p>
-</div>
+  <p class='errors'><%= show_errors(@user, :cats) %></p>
 
-  <%= f.submit %>
+  <div class='input-group'>
+    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+    <%= f.check_box :children, { class: 'form-control' } %>
+  </div>
+
+  <p class='errors'><%= show_errors(@user, :children) %></p>
+
+  <div class='input-group'>
+    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+    <%= f.range_field :energy, in: (1..10), class: 'form-control' %>
+  </div>
+
+  <p class='errors'><%= show_errors(@user, :energy) %></p>
+
+  <%= f.submit 'Confirm Settings' %>
 <% end %>
 
-<%= form_for @user, method: :delete do |f| %>
-  <%= f.submit 'Delete Account' %>
-<% end %>
