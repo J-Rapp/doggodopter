@@ -22,7 +22,8 @@ h2 {
 
 .blue-box {
   background: $blue;
-  max-width: 80%;
+  width: 80%;
+  max-width: 750px;
   border-radius: 10px;
   padding: 2em 0;
 }
@@ -43,6 +44,8 @@ h2 {
 }
 
 .input-group {
-  margin: .75em;
+  width: 75%;
+  max-width: 400px;
+  margin: 1em auto;
   border-radius: 5px;
 }
