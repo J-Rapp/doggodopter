@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :Email, uniqueness: { message: 'Email already taken.' },
+  validates :email, uniqueness: { message: 'Email already taken.' },
                     presence: { allow_blank: false, message: 'Enter an email.' }
   validates :password, length: { minimum: 6 }
 

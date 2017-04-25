@@ -2,21 +2,24 @@
 
   <div class='input-group'>
     <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-    <%= f.text_field :email, { class: 'form-control', placeholder: 'email' } %>
-    <p class='errors'><%= show_errors(@user, :email) %></p>
+    <%= f.text_field :email, { class: 'form-control', placeholder: 'Email' } %>
   </div>
+
+  <p class='errors'><%= show_errors(@user, :email) %></p>
 
   <div class='input-group'>
     <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
     <%= f.password_field :password, { class: 'form-control', placeholder: 'Password' } %>
-    <p class='errors'><%= show_errors(@user, :password) %></p>
   </div>
+
+  <p class='errors'><%= show_errors(@user, :password) %></p>
 
   <div class='input-group'>
     <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
     <%= f.password_field :password_confirmation, { class: 'form-control', placeholder: 'Confirm Password' } %>
-    <p class='errors'><%= show_errors(@user, :password_confirmation) %></p>
   </div>
+
+  <p class='errors'><%= show_errors(@user, :password_confirmation) %></p>
 
   <%= f.submit 'Sign Up', class: 'btn btn-default' %>
 
