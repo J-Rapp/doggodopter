@@ -8,8 +8,8 @@ $(document).ready(function() {
 });
 
 Snuffle.getMetaToken = function() {
-  let metas = document.getElementsByTagName('meta');
-  for (let i=0; i<metas.length; i++) {
+  var metas = document.getElementsByTagName('meta');
+  for (var i=0; i<metas.length; i++) {
     if (metas[i].getAttribute('name') === 'csrf-token') {
       return metas[i].getAttribute('content');
     };
@@ -17,7 +17,7 @@ Snuffle.getMetaToken = function() {
 };
 
 Snuffle.handleIgnore = function() {
-  $('.ignore').click((event) => {
+  $('.ignore').click(function(event) {
 
     const dogCard = $(event.target).parents('.dog-card'),
           dogId = dogCard.data('dog'),
@@ -35,7 +35,7 @@ Snuffle.handleIgnore = function() {
       },
       type: 'POST',
       dataType: 'json',
-      success: (response) => {
+      success: function(response) {
         dogCard.animate({
           opacity: 0,
           left: "-=75",
@@ -43,7 +43,7 @@ Snuffle.handleIgnore = function() {
           dogCard.remove()
         })
       },
-      error: (xhr, response) => {
+      error: function(xhr, response) {
         console.log('whoops')
         // card remains in place
       }
@@ -53,8 +53,8 @@ Snuffle.handleIgnore = function() {
 };
 
 Snuffle.handleMatch = function() {
-  $('.match').click((event) => {
-    
+  $('.match').click(function(event) {
+
     const dogCard = $(event.target).parents('.dog-card'),
           dogId = dogCard.data('dog'),
           userId = dogCard.data('user')
@@ -71,7 +71,7 @@ Snuffle.handleMatch = function() {
       },
       type: 'POST',
       dataType: 'json',
-      success: (response) => {
+      success: function(response) {
         dogCard.animate({
           opacity: 0,
           left: "+=75",
@@ -79,7 +79,7 @@ Snuffle.handleMatch = function() {
           dogCard.remove()
         })
       },
-      error: (xhr, response) => {
+      error: function(xhr, response) {
         console.log('whoops')
         // card remains in place
       }
