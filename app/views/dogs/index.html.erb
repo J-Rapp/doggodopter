@@ -1,0 +1,25 @@
+<div class='container stack'>
+  <div class='row'>
+    <div class='col-12'>
+
+      <% @dogs.each do |dog| %>
+
+        <div class='container dog-card' data-dog=<%= dog.id %> data-user=<%= session[:user_id] %>>
+          <div class='row dog-pic text-center vertical-align'>
+            <img class='profile align-middle' src=<%= dog.images[0] %> >
+          </div>
+          <div class='row'>
+            <div class='col-sm-6 text-center ignore'>
+              <i class="fa fa-times fa-3x fa-red" aria-hidden="true"></i>
+            </div>
+            <div class='col-sm-6 text-center match'>
+              <i class="fa fa-check fa-3x fa-green" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

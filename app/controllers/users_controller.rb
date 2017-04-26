@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     set_user
     update_user_attributes
     if @user.save validate: false
-      redirect_to user_path(@user)
+      redirect_to dogs_path
     else
       render :'users/edit'
     end
