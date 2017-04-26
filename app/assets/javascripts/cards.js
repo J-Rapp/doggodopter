@@ -2,7 +2,7 @@ if (typeof Snuffle === 'undefined') {
   Snuffle = {};
 }
 
-$(document).ready(() => {
+$(document).ready(function() {
   Snuffle.handleIgnore();
   Snuffle.handleMatch();
 });
@@ -12,9 +12,9 @@ Snuffle.getMetaToken = function() {
   for (let i=0; i<metas.length; i++) {
     if (metas[i].getAttribute('name') === 'csrf-token') {
       return metas[i].getAttribute('content');
-    }
-  }
-}
+    };
+  };
+};
 
 Snuffle.handleIgnore = function() {
   $('.ignore').click((event) => {
@@ -54,6 +54,7 @@ Snuffle.handleIgnore = function() {
 
 Snuffle.handleMatch = function() {
   $('.match').click((event) => {
+    
     const dogCard = $(event.target).parents('.dog-card'),
           dogId = dogCard.data('dog'),
           userId = dogCard.data('user')
@@ -85,5 +86,5 @@ Snuffle.handleMatch = function() {
     })
 
   });
-}
+};
 

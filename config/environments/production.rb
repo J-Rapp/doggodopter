@@ -83,8 +83,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  # Rails 5 now disables autoload in production for whatever reason
-  # Env files take precedence over application.rb
-  config.eager_load_paths += %W(#{config.root}/lib/craigslist)
 end
