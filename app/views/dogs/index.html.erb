@@ -1,0 +1,25 @@
+<div class='container stack'>
+  <div class='row'>
+    <div class='col-12'>
+
+      <% @dogs.each do |dog| %>
+
+        <div class='container dog-card'>
+          <div class='row'>
+            <img src=<%= dog.images[0] %> >
+          </div>
+          <div class='row'>
+            <div class='col-sm-6 text-center'>
+              <i class="fa fa-times fa-3x fa-red" aria-hidden="true"></i>
+            </div>
+            <div class='col-sm-6 text-center'>
+              <i class="fa fa-check fa-3x fa-green" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

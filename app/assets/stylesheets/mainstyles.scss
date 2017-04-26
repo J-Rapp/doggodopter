@@ -1,15 +1,14 @@
 body {
   font-family: Futura, “Trebuchet MS”, Arial, sans-serif;
   background-color: $silver-white;
-  margin-top: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 h1 {
   font-size: 5em;
   font-family: 'Pacifico', cursive;
   color: $red;
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 
 h2 {
@@ -25,7 +24,9 @@ h2 {
   width: 80%;
   max-width: 750px;
   border-radius: 10px;
-  padding: 2em 0;
+  margin: 2em auto;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .btn {
@@ -48,4 +49,43 @@ h2 {
   max-width: 400px;
   margin: 1em auto;
   border-radius: 5px;
+}
+
+.stack {
+  position: relative;
+}
+
+.dog-card {
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 400px;
+  width: 370px;
+  background-color: $silver-white;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.dog-card:last-child {
+  position: relative;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.fa-red {
+  color: $dull-red;
+}
+
+.fa-green {
+  color: $green;
+}
+
+.selections {
+  display: inline-block;
 }

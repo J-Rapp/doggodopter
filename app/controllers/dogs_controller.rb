@@ -1,6 +1,6 @@
 class DogsController < ApplicationController
   def index
-    @dogs = Dogs.all
+    @dogs = Dog.all
   end
 
   def destroy
