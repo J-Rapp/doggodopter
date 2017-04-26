@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.valid?
+      send_mailjet
       session[:user_id] = @user.id
       # TODO: jump straight into dog options
       redirect_to edit_user_path(@user)
@@ -52,5 +53,16 @@ class UsersController < ApplicationController
     @user.cats = user_params[:cats]
     @user.children = user_params[:children]
     @user.energy = user_params[:energy]
+  end
+
+  def send_mailjet
+    email = {
+      from_email: 'jake.rapp322@gmail.com',
+      from_name: 'Jacob Rapp',
+      subject: 'Snuffle Welcome Email',
+      text_part: 'Successfully configured the Mailjet API',
+      recipients: [{ email: @user.email }]
+    }
+    Mailjet::Send.create(email)
   end
 end
