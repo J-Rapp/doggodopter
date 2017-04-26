@@ -11,5 +11,11 @@ require 'craigslist'
 # Populate the db with dogs
 parsed_results = Craigslist.search
 parsed_results.each do |result|
-  p result[:images]
+  dog = Dog.new
+  dog.url = result[:url]
+  dog.images = result[:images]
+  dog.cats = [true, false].sample
+  dog.children = [true, false].sample
+  dog.energy = rand(1..5)
+  dog.save
 end
