@@ -8,4 +8,4 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w(font-awesome *.ttf *.woff *.svg *.eot)
+Rails.application.config.assets.precompile += %w(font-awesome cards.js jquery-3.2.1.min.js)

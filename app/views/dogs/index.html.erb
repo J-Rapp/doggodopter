@@ -4,7 +4,7 @@
 
       <% @dogs.each do |dog| %>
 
-        <div class='container dog-card'>
+        <div class='container dog-card' data-dog=<%= dog.id %> data-user=<%= session[:user_id] %>>
           <div class='row dog-pic vertical-align'>
             <img class='profile align-middle' src=<%= dog.images[0] %> >
           </div>
