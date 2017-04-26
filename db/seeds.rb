@@ -9,4 +9,5 @@
 require 'craigslist'
 
 # Populate the db with dogs
-Craigslist.search
+parsed_results = Craigslist.search
+p parsed_results
