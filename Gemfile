@@ -44,6 +44,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   gem 'rspec-rails', '~> 3.5'
+
+  gem 'dotenv-rails', '2.1.1'
 end
 
 group :development do
