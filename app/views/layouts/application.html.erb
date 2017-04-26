@@ -11,16 +11,23 @@
   </head>
 
   <body>
+
     <div class='container'>
-      <div class='col-12 text-center'>
-        <h1>Snuffle</h1>
-        <h2>doggos in need of a forever home</h2>
+      <div class='row'>
+        <div class='col-sm-12 text-center'>
+          <h1>Snuffle</h1>
+          <h2>doggos in need of a forever home</h2>
+        </div>
       </div>
     </div>
     <div class='container blue-box text-center'>
-      <div class='col-12 text-center'>
-        <%= yield %>
+      <div class='row'>
+        <div class='col-sm-12 text-center'>
+          <%= flash[:error] %>
+          <%= yield %>
+        </div>
       </div>
     </div>
+
   </body>
 </html>
