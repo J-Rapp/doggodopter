@@ -13,8 +13,7 @@ module Craigslist
         result_card_nodes.each do |card|
           subdomain_results << {
             url: get_result_url(card, craigslist_url),
-            title: get_result_title(card),
-            price: get_result_price(card)
+            images: get_result_image(card)
           }
         end
         subdomain_results
@@ -33,12 +32,13 @@ module Craigslist
         end
       end
 
-      def get_result_title(card)
-        card.css('.result-title')[0].text
-      end
-
-      def get_result_price(card)
-        card.css('.result-price')[0].text if card.css('.result-price')[0]
+      def get_result_image(card)
+        image_ids = card.css('.result-image')[0]['data-ids']
+        image_ids = image_ids.split(',')
+        image_ids.map do |id|
+          # remove the first two characters
+          'http://images.craigslist.org/' + id[2..-1] + '_300x300.jpg'
+        end
       end
     end
   end

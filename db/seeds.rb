@@ -10,4 +10,6 @@ require 'craigslist'
 
 # Populate the db with dogs
 parsed_results = Craigslist.search
-p parsed_results
+parsed_results.each do |result|
+  p result[:images]
+end
