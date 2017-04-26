@@ -74,10 +74,6 @@ h2 {
   position: relative;
 }
 
-img {
-  border-radius: 10px;
-}
-
 .fa-red {
   color: $dull-red;
 }
@@ -88,4 +84,17 @@ img {
 
 .selections {
   display: inline-block;
+}
+
+.dog-pic {
+  height: 300px;
+  width: 300px;
+  margin: 1em auto;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
 }
