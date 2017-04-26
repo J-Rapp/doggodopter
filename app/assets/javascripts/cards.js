@@ -36,9 +36,12 @@ Snuffle.handleIgnore = function() {
       type: 'POST',
       dataType: 'json',
       success: (response) => {
-        console.log('we have lift off')
-        // card animates left and red
-        // next card is brought forward
+        dogCard.animate({
+          opacity: 0,
+          left: "-=75",
+        }, 500, function() {
+          dogCard.remove()
+        })
       },
       error: (xhr, response) => {
         console.log('whoops')
@@ -68,9 +71,12 @@ Snuffle.handleMatch = function() {
       type: 'POST',
       dataType: 'json',
       success: (response) => {
-        console.log('we have lift off')
-        // card animates right and green
-        // next card is brought forward
+        dogCard.animate({
+          opacity: 0,
+          left: "+=75",
+        }, 500, function() {
+          dogCard.remove()
+        })
       },
       error: (xhr, response) => {
         console.log('whoops')
