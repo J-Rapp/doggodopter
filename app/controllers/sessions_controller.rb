@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if @login.valid?
       user_id = @login.user_id
       user_session(user_id)
-      redirect_to user_path(user_id)
+      redirect_to dogs_path
     else
       render :'sessions/new'
     end
